@@ -1,4 +1,4 @@
-import Layout from '../../app/layout';
+import Layout from '../layout';
 import ProfileContent from './ProfileContent';
 
 const ProfilePage = () => {

@@ -1,7 +1,12 @@
-// app/profile/ProfileContent.tsx
+// Move ProfileContent.tsx to a different directory (e.g., components) or use the following approach:
+// components/profile/ProfileContent.tsx
+use client;
+
 import React from 'react';
 import { useSession } from 'next-auth/react';
 
+// Add "use client" directive if you keep it in the `app` directory
+// use client;
 const ProfileContent = () => {
   const { data: session } = useSession();
 
@@ -18,9 +23,7 @@ const ProfileContent = () => {
       <h1>Profile</h1>
       <p>Name: {session.user.name}</p>
       <p>Email: {session.user.email}</p>
-      {/* Display the user image if available */}
       {session.user.image && <img src={session.user.image} alt={session.user.name} />}
-      {/* Additional profile information can be added here */}
     </div>
   );
 };
